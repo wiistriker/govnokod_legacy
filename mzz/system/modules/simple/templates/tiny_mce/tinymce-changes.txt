@@ -1,0 +1,2 @@
+file: jquery.tinymce.js
+- replaced jQuery's b.getScript() to fileLoader.loadJS().

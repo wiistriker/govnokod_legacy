@@ -1,0 +1,152 @@
+div.menuHelp {
+    color: #555;
+    font-size: 90%;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+div.menuList {
+    height: 20px;
+    font-size: 95%;
+    color: #000;
+    margin: 4px 0 5px;
+    border-bottom: 3px solid #E4E4E4;
+    padding-left: 5px;
+    padding-bottom: 2px;
+}
+
+li.treeItem {
+    padding-bottom: 3px;
+}
+
+div.menuList div {
+    float: left;
+    margin-right: 15px;
+}
+
+div.menuList a.active {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.menuTree {
+    font-size: 90%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.menuMargin {
+    padding: 0;
+    margin-left: 5px !important;
+}
+
+.menuItemTitle {
+    height: 15px;
+    background-repeat: no-repeat;
+    padding: 6px 10px;
+}
+
+.treeItem {
+    list-style-type: none;
+    background-repeat: repeat-x;
+    background-position: top right;
+    margin-top: 3px;
+    margin-bottom: -3px;
+}
+
+span.menuUrl, span.menuName {
+    color: #7A7A7A;
+}
+
+span.menuName {
+    font-size: 90%;
+}
+
+.menuTree .ns-placeholder li,
+.menuTree li.ns-placeholder {
+    background: transparent url('../../images/menu/nsplace.png') no-repeat center left;
+    min-height: 7px;
+    overflow: none;
+}
+
+
+ul.menuTree {
+    margin-left:5px !important;
+    padding:0;
+    list-style-type:none;
+}
+
+ul.menuTree li {
+    display: block;
+    list-style-type:none;
+}
+
+.menuTree li div.menuItem {
+    position: relative;
+    background: transparent url(../../images/menu/sprite.png) no-repeat 0px -30px;
+}
+
+.menuItem div.menuTreeTitle {
+    padding-bottom:3px;
+    list-style-type:none;
+    margin: 3px 8px -3px 8px;
+    line-height: 27px;
+    height: 27px;
+    background: transparent url(../../images/menu/sprite.png) repeat-x 0px 0px;
+}
+
+.menuItem div.menuActions {
+    position: absolute;
+    display: block;
+    height: 22px;
+    top: 0px;
+    right: 0px;
+    padding-right: 8px;
+    padding-top: 5px;
+    background: transparent url(../../images/menu/sprite.png) no-repeat right -60px;
+}
+
+.menuTree li div.menuItem.yellow {
+    background: transparent url(../../images/menu/sprite.png) no-repeat 0px -120px;
+}
+
+.menuItem.yellow div.menuTreeTitle {
+    background: transparent url(../../images/menu/sprite.png) repeat-x 0px -90px;
+}
+
+.menuItem.yellow div.menuActions {
+    background: transparent url(../../images/menu/sprite.png) no-repeat right -150px;
+}
+
+.menuTree li div.menuItem.red,
+li.mzz-ns-clone div.menuItem {
+    background: transparent url(../../images/menu/sprite.png) no-repeat 0px -210px;
+}
+
+.menuItem.red div.menuTreeTitle,
+.mzz-ns-clone div.menuTreeTitle {
+    background: transparent url(../../images/menu/sprite.png) repeat-x 0px -180px;
+}
+
+.menuItem.red div.menuActions,
+.mzz-ns-clone div.menuActions {
+    background: transparent url(../../images/menu/sprite.png) no-repeat right -240px;
+}
+
+ul.menuTree ul {
+    padding-left: 10px;
+}
+
+.menuHandler {
+    background: transparent url(../../images/jip/handle.png) repeat top center;
+    width: 9px;
+    height: 20px;
+    float: left;
+    display: inline;
+    margin: 4px 5px 0px 0px;
+    cursor: move;
+}

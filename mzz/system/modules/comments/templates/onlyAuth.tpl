@@ -1,0 +1,1 @@
+{_ only_auth}

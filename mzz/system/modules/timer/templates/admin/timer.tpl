@@ -1,0 +1,1 @@
+{_ time}: {$timer->getPeriod()|round:3} {_ sec_short}., SQL {$timer->getQueriesNum()}/{$timer->getPreparedNum()}: {$timer->getQueriesTime()|number_format:3} {_ sec_short}.

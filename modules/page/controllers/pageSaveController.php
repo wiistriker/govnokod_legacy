@@ -1,0 +1,103 @@
+<?php
+/**
+ * $URL: https://govnokod.googlecode.com/svn/trunk/govnoquoter/modules/page/controllers/pageSaveController.php $
+ *
+ * MZZ Content Management System (c) 2005-2007
+ * Website : http://www.mzz.ru
+ *
+ * This program is free software and released under
+ * the GNU/GPL License (See /docs/GPL.txt).
+ *
+ * @link http://www.mzz.ru
+ * @version $Id: pageSaveController.php 308 2010-01-16 06:59:16Z wiistriker $
+ */
+
+/**
+ * pageSaveController: контроллер для метода save модуля page
+ *
+ * @package modules
+ * @subpackage page
+ * @version 0.1
+ */
+class pageSaveController extends simpleController
+{
+    protected function getView()
+    {
+        $pageMapper = $this->toolkit->getMapper('page', 'page');
+
+        $name = $this->request->getString('name');
+        $pageFolderMapper = $this->toolkit->getMapper('page', 'pageFolder');
+
+        $action = $this->request->getAction();
+        $isEdit = ($action == 'edit');
+
+        if ($isEdit) {
+            $page = $pageFolderMapper->searchChild($name);
+            if (empty($page)) {
+                return $this->forward404($pageFolderMapper);
+            }
+            $pageFolder = $page->getFolder();
+        } else {
+            $page = $pageMapper->create();
+            $pageFolder = $pageFolderMapper->searchByPath($name);
+        }
+
+        if (empty($page) || ($isEdit && empty($pageFolder))) {
+            return $this->forward404($pageMapper);
+        }
+
+
+        $validator = new formValidator();
+        
+        $validator->filter('trim', 'page[name]');
+        
+        $validator->rule('required', 'page[name]', i18n::getMessage('error_name_required', 'page'));
+        $validator->rule('regex', 'page[name]', i18n::getMessage('error_name_invalid', 'page'), '/^[-_a-z0-9]+$/i');
+        $validator->rule('callback', 'page[name]', i18n::getMessage('error_name_unique', 'page'), array(array($this, 'checkUniquePageName'), $page, $pageFolder));
+
+        if ($validator->validate()) {
+            $data = new arrayDataspace($this->request->getArray('page', SC_POST));
+
+            $page->setName($data['name']);
+            
+            if (isset($data['title'])) {
+                $page->setTitle($data['title']);
+            }
+            if (isset($data['content'])) {
+                $page->setContent($data['content']);
+            }
+
+            if (isset($data['compiled'])) {
+                $page->setCompiled((int) $data['compiled']);
+            }
+
+            if (!$isEdit) {
+                $page->setFolder($pageFolder);
+            }
+            $pageMapper->save($page);
+            return jipTools::redirect();
+        }
+
+        $url = new url('withAnyParam');
+        $url->add('name', $pageFolder->getTreePath() . ($isEdit ? '/' . $page->getName() : ''));
+        $url->setAction($action);
+
+        $this->smarty->assign('form_action', $url->get());
+        $this->smarty->assign('validator', $validator);
+        $this->smarty->assign('page', $page);
+        $this->smarty->assign('isEdit', $isEdit);
+
+        return $this->smarty->fetch('page/save.tpl');
+    }
+
+    public function checkUniquePageName($name, $page, $pageFolder)
+    {
+        if ($name == $page->getName()) {
+            return true;
+        }
+        $pageMapper = $this->toolkit->getMapper('page', 'page');
+
+        return is_null($pageMapper->searchByNameInFolder($name, $pageFolder->getId()));
+    }
+}
+?>

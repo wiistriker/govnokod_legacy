@@ -1,0 +1,1 @@
+{load module=$current_module action="admin"}

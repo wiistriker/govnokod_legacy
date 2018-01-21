@@ -1,0 +1,1 @@
+- добавлено ключевое слово static в mock_objects.php: "function generate(..." -> "static function generate(..."

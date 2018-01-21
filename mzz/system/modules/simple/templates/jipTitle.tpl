@@ -1,0 +1,1 @@
+<div class="jipTitle">{$title}</div>

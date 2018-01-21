@@ -1,0 +1,113 @@
+div.entry-comments
+{
+    margin: 0.8em 0 0 0;
+    padding: 0;
+}
+
+div.entry-comments a
+{
+    text-decoration: none;
+    border-bottom: dotted 1px #0060b6;
+}
+
+div.entry-comments a.selected {
+    border-bottom: 0;
+    color: #000;
+}
+
+div.entry-comments h3
+{
+    font-weight: 100;
+    font-size: 1.5em;
+}
+
+div.entry-comments ul
+{
+    margin: 0.1em 0 0 0;
+    padding: 0;
+
+    border: none;
+
+    list-style: none;
+}
+
+div.entry-comments ul .hcomment
+{
+    margin: 1.3em 0 0 0;
+    padding: 0;
+
+    border: none;
+}
+
+div.entry-comments ul .hcomment ul
+{
+    margin-left: 2.5em;
+}
+
+div.entry-comments ul .hcomment ul .hcomment ul .hcomment ul .hcomment ul .hcomment ul .hcomment ul .hcomment ul .hcomment ul .hcomment ul .hcomment ul .hcomment ul
+{
+    margin-left: 0;
+}
+
+div.entry-comments ul .hcomment a.answer
+{
+    padding: 0.2em 0 0 0;
+    display: -moz-inline-stack;
+    display: inline-block;
+    border-bottom: 1px dotted #0060B6;
+    font-size: 0.9em;
+}
+
+div.entry-comments ul .hcomment a.selected
+{
+    border-bottom: 0;
+    color: #000;
+}
+
+div.entry-comments ul .hcomment p
+{
+    margin: 0;
+    padding: 0;
+
+    font-size: 0.9em;
+}
+
+div.entry-comments ul .hcomment span.entry-author
+{
+    font-weight: bold;
+}
+
+div.entry-comments ul .hcomment p .published
+{
+    margin-left: 0.5em;
+
+    text-decoration: none;
+    border: none;
+
+    color: #aaa;
+}
+
+div.entry-comments ul .hcomment .entry-comment
+{
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 0.9em;
+}
+
+div.entry-comments form dl dd input
+{
+	width: 60%;
+}
+
+div.entry-comments form dl dd textarea
+{
+	width: 60%;
+}
+
+div.entry-comments form dl,
+div.entry-commentsform dl dt,
+div.entry-comments form dl dd {
+    margin: 0;
+	padding: 0;
+}

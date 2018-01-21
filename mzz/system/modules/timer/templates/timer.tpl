@@ -1,0 +1,1 @@
+{_ time}: {$timer->getPeriod()|round:4} {_ sec}. {_ sql_queries} {$timer->getQueriesNum()}+{$timer->getPreparedNum()}: {$timer->getQueriesTime()|number_format:4} {_ sec}.

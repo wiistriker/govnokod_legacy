@@ -1,0 +1,12 @@
+/**
+ * $URL: svn://svn.subversion.ru/usr/local/svn/mzz/trunk/docs/standart_header.txt $
+ *
+ * Copyright (c) Framy
+ * Website: http://www.framy.ru
+ *
+ * This program is free software and released under
+ * the GNU Lesser General Public License (See /docs/LGPL.txt).
+ *
+ * @link http://www.framy.ru
+ * @version $Id: standart_header.txt 3913 2009-11-02 04:52:58Z zerkms $
+ */

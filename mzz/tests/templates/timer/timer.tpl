@@ -1,0 +1,1 @@
+Time: <b>{$timer->getPeriod()|round:5}</b> s. Queries: <b>{$timer->getQueriesNum()}</b>, prepared: <b>{$timer->getPreparedNum()}</b>, (<b>{$timer->getQueriesTime()|number_format:5}</b> s.)

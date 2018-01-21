@@ -1,0 +1,37 @@
+div.toolbarBlock {
+    float: left;
+    width: 30%;
+    margin: 10px;
+}
+
+#aclObjects .first {
+    width: 50px;
+    text-align: center;
+}
+
+span.toolbarSectionName {
+    display: block;
+    color: #BA1B1B;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+}
+
+table.toolbar {
+    margin-bottom: 5px;
+}
+
+table.toolbar .actions {
+    text-align: right;
+    line-height: 0px;
+}
+
+table.toolbar .actions span.mzz-icon {
+    margin: 0px 1px;
+}
+
+
+table.toolbar .empty {
+    text-align: center;
+    font-size: 0.9em;
+}
