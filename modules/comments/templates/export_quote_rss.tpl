@@ -8,7 +8,7 @@
         <managingEditor>support@govnokod.ru (govnokod.ru support)</managingEditor>
         <generator>{$smarty.const.MZZ_NAME} v.100500-{$smarty.const.MZZ_REVISION}</generator>
         <pubDate>{"D, d M Y H:i:s O"|date:$smarty.now}</pubDate>
-        <lastBuildDate>{"D, d M Y H:i:s O"|date:$comments->rewind()->getCreated()}</lastBuildDate>
+        {if $comments_count > 0 %}<lastBuildDate>{"D, d M Y H:i:s O"|date:$comments->rewind()->getCreated()}</lastBuildDate>{/if}
         <image>
             <link>{$rss_url|h}</link>
             <url>http://govnokod.ru/images/brand.png</url>

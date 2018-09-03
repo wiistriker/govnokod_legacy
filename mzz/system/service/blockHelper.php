@@ -7,7 +7,7 @@ class blockHelper
     protected static $instance = false;
     protected $weights = array();
 
-    public function getInstance()
+    static public function getInstance()
     {
         if (self::$instance == false) {
             self::$instance = new blockHelper();

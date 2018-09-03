@@ -40,6 +40,7 @@ class commentsExportController extends simpleController
 
                 $this->smarty->assign('commentsFolder', $commentsFolder);
                 $this->smarty->assign('comments', $comments);
+                $this->smarty->assign('comments_count', sizeof($comments));
                 return $this->smarty->fetch('comments/export_quote_rss.tpl', 'native');
             }
         }

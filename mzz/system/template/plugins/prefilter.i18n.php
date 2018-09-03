@@ -30,6 +30,10 @@ function smarty_prefilter_i18n($tpl_source, $smarty = null)
         $module = 'simple';
     }
 
+    return preg_replace_callback('#\{_\s+(\'|"|)(.*?)(?:\\1)(?:\s+(.*?))?\}#', function($m) use ($module, $lang, $generatorCallback) {
+        return i18n::getMessage($m[2], $module, $lang, $generatorCallback);
+    }, $tpl_source);
+
     return preg_replace('#\{_\s+(\'|"|)(.*?)(?:\\1)(?:\s+(.*?))?\}#e', $callback . "('$2', '" . $module . "', '" . $lang . "', '$3', '" . $generatorCallback . "')", $tpl_source);
 }
 
